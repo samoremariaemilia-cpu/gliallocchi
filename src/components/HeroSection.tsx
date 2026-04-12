@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, MapPin } from "lucide-react";
-import heroPizza from "@/assets/hero-pizza.jpg";
+import heroPizza from "@/assets/hero-pizza-new.jpg";
 import logoWhite from "@/assets/logo-allocchi-white.png";
 
 const HeroSection = () => {
