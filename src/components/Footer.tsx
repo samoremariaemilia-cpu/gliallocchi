@@ -1,11 +1,11 @@
-import logo from "@/assets/logo-allocchi.png";
+import logoWhite from "@/assets/logo-allocchi-white.png";
 
 const Footer = () => {
   return (
     <footer className="py-12 bg-warm-dark text-warm-dark-foreground">
       <div className="container max-w-6xl mx-auto px-6 text-center">
         <img
-          src={logo}
+          src={logoWhite}
           alt="Gli Allocchi logo"
           className="w-16 h-16 mx-auto mb-4 opacity-80"
           loading="lazy"
