@@ -5,12 +5,28 @@ import pizza1 from "@/assets/pizza-1.jpg";
 import pizza2 from "@/assets/pizza-2.jpg";
 import pizza3 from "@/assets/pizza-3.jpg";
 import pizza4 from "@/assets/pizza-4.jpg";
+import pizza5 from "@/assets/pizza-5.jpg";
+import pizza6 from "@/assets/pizza-6.jpg";
+import pizza7 from "@/assets/pizza-7.jpg";
+import pizza8 from "@/assets/pizza-8.jpg";
+import pizza9 from "@/assets/pizza-9.jpg";
+import pizza10 from "@/assets/pizza-10.jpg";
+import pizza11 from "@/assets/pizza-11.jpg";
+import pizza12 from "@/assets/pizza-12.jpg";
 
 const menuImages = [
   { src: pizza1, alt: "Menù e pizze 1" },
   { src: pizza2, alt: "Menù e pizze 2" },
   { src: pizza3, alt: "Menù e pizze 3" },
   { src: pizza4, alt: "Menù e pizze 4" },
+  { src: pizza5, alt: "Preparazione pizza con basilico" },
+  { src: pizza6, alt: "Pizza margherita" },
+  { src: pizza7, alt: "Pizza con bacon e cheddar" },
+  { src: pizza8, alt: "Pizza con peperoni e salsiccia" },
+  { src: pizza9, alt: "Il pizzaiolo" },
+  { src: pizza10, alt: "Pizza con mortadella e burrata" },
+  { src: pizza11, alt: "Calzone ripieno" },
+  { src: pizza12, alt: "Pizza marinara con olive" },
 ];
 
 const MenuSection = () => {
