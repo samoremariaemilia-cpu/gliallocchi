@@ -5,12 +5,14 @@ import pizza1 from "@/assets/pizza-1.jpg";
 import pizza2 from "@/assets/pizza-2.jpg";
 import pizza3 from "@/assets/pizza-3.jpg";
 import pizza4 from "@/assets/pizza-4.jpg";
+import pizza5 from "@/assets/pizza-5.jpg";
 
 const menuImages = [
-  { src: pizza1, alt: "Menù e pizze 1" },
-  { src: pizza2, alt: "Menù e pizze 2" },
-  { src: pizza3, alt: "Menù e pizze 3" },
-  { src: pizza4, alt: "Menù e pizze 4" },
+  { src: pizza1, alt: "Pizze Classiche" },
+  { src: pizza2, alt: "Pizze Classiche 2" },
+  { src: pizza3, alt: "Le Nostre Pizze" },
+  { src: pizza4, alt: "Desserts e Bevande" },
+  { src: pizza5, alt: "Fritti e Gin Tonic" },
 ];
 
 const MenuSection = () => {
