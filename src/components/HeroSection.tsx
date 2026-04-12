@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import heroPizza from "@/assets/hero-pizza.jpg";
-import logo from "@/assets/logo-allocchi.png";
+import logoWhite from "@/assets/logo-allocchi-white.png";
 
 const HeroSection = () => {
   return (
@@ -20,7 +20,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <motion.img
-          src={logo}
+          src={logoWhite}
           alt="Gli Allocchi Pizzeria logo"
           className="w-40 h-40 mx-auto mb-8 drop-shadow-2xl"
           width={512}
