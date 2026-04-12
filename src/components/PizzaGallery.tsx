@@ -1,29 +1,36 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import pizza1 from "@/assets/pizza-1.jpg";
-import pizza2 from "@/assets/pizza-2.jpg";
-import pizza3 from "@/assets/pizza-3.jpg";
-import pizza4 from "@/assets/pizza-4.jpg";
+import pizza5 from "@/assets/pizza-5.jpg";
+import pizza6 from "@/assets/pizza-6.jpg";
+import pizza7 from "@/assets/pizza-7.jpg";
+import pizza8 from "@/assets/pizza-8.jpg";
+import pizza9 from "@/assets/pizza-9.jpg";
+import pizza10 from "@/assets/pizza-10.jpg";
+import pizza11 from "@/assets/pizza-11.jpg";
+import pizza12 from "@/assets/pizza-12.jpg";
 
-const menuImages = [
-  { src: pizza1, alt: "Menù e pizze 1" },
-  { src: pizza2, alt: "Menù e pizze 2" },
-  { src: pizza3, alt: "Menù e pizze 3" },
-  { src: pizza4, alt: "Menù e pizze 4" },
+const galleryImages = [
+  { src: pizza5, alt: "Preparazione pizza con basilico" },
+  { src: pizza6, alt: "Pizza margherita" },
+  { src: pizza7, alt: "Pizza con bacon e cheddar" },
+  { src: pizza8, alt: "Pizza con peperoni e salsiccia" },
+  { src: pizza9, alt: "Il pizzaiolo" },
+  { src: pizza10, alt: "Pizza con mortadella e burrata" },
+  { src: pizza11, alt: "Calzone ripieno" },
+  { src: pizza12, alt: "Pizza marinara con olive" },
 ];
 
-const MenuSection = () => {
+const PizzaGallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const prev = () => setActiveImage((i) => (i === 0 ? menuImages.length - 1 : i - 1));
-  const next = () => setActiveImage((i) => (i === menuImages.length - 1 ? 0 : i + 1));
+  const prev = () => setActiveImage((i) => (i === 0 ? galleryImages.length - 1 : i - 1));
+  const next = () => setActiveImage((i) => (i === galleryImages.length - 1 ? 0 : i + 1));
 
   return (
     <>
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-background">
         <div className="container max-w-6xl mx-auto px-6">
           <motion.div
             className="text-center mb-12"
@@ -33,42 +40,38 @@ const MenuSection = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-accent font-body font-bold uppercase tracking-widest text-sm mb-4">
-              Scopri i nostri piatti
+              Dalla nostra cucina
             </p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Il nostro Menù
+              Le nostre Pizze
             </h2>
           </motion.div>
 
-          <div className="relative">
-            <div
-              ref={scrollRef}
-              className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {menuImages.map((photo, i) => (
-                <motion.button
-                  key={i}
-                  onClick={() => { setActiveImage(i); setIsOpen(true); }}
-                  className="flex-shrink-0 w-[70vw] sm:w-[45%] md:w-[23%] overflow-hidden rounded-lg aspect-[3/4] snap-center"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </motion.button>
-              ))}
-            </div>
+          {/* Masonry-style grid */}
+          <div className="columns-2 md:columns-3 gap-4 space-y-4">
+            {galleryImages.map((photo, i) => (
+              <motion.button
+                key={i}
+                onClick={() => { setActiveImage(i); setIsOpen(true); }}
+                className="w-full overflow-hidden rounded-lg break-inside-avoid"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </motion.button>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Fullscreen viewer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -101,8 +104,8 @@ const MenuSection = () => {
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeImage}
-                  src={menuImages[activeImage].src}
-                  alt={menuImages[activeImage].alt}
+                  src={galleryImages[activeImage].src}
+                  alt={galleryImages[activeImage].alt}
                   className="w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -113,7 +116,7 @@ const MenuSection = () => {
             </div>
 
             <div className="flex gap-3 mt-6">
-              {menuImages.map((_, i) => (
+              {galleryImages.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveImage(i)}
@@ -132,4 +135,4 @@ const MenuSection = () => {
   );
 };
 
-export default MenuSection;
+export default PizzaGallery;
