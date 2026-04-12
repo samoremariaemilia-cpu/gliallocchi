@@ -1,23 +1,24 @@
 import { motion } from "framer-motion";
+import { Flame, TreeDeciduous, CircleDot, Wine } from "lucide-react";
 
 const highlights = [
   {
-    icon: "🔥",
+    icon: Flame,
     title: "Forno a legna",
     description: "Cottura tradizionale per una pizza autentica con cornicione perfetto.",
   },
   {
-    icon: "🌰",
+    icon: TreeDeciduous,
     title: "Pizza Marradese",
     description: "La nostra specialità autunnale con il famoso marrone del Mugello IGP.",
   },
   {
-    icon: "🧀",
+    icon: CircleDot,
     title: "Cornicione ripieno",
     description: "Possibilità di avere il cornicione ripieno di ricotta fresca artigianale.",
   },
   {
-    icon: "🍷",
+    icon: Wine,
     title: "Vini & Birre",
     description: "Carta dei vini presente e selezione di birre di pregio accuratamente scelte.",
   },
@@ -43,20 +44,23 @@ const HighlightsSection = () => {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {highlights.map((item, i) => (
-            <motion.div
-              key={item.title}
-              className="bg-background rounded-lg p-8 text-center shadow-sm hover:shadow-md transition-shadow"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <span className="text-4xl mb-4 block">{item.icon}</span>
-              <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
-              <p className="text-muted-foreground font-body leading-relaxed">{item.description}</p>
-            </motion.div>
-          ))}
+          {highlights.map((item, i) => {
+            const IconComp = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                className="bg-background rounded-lg p-8 text-center shadow-sm hover:shadow-md transition-shadow"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <IconComp className="w-10 h-10 mx-auto mb-4 text-accent" strokeWidth={1.5} />
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground font-body leading-relaxed">{item.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

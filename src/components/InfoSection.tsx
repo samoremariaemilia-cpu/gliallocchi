@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MapPin, Clock, Phone } from "lucide-react";
 
 const InfoSection = () => {
   return (
@@ -26,7 +27,7 @@ const InfoSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-3xl mb-3 block">📍</span>
+            <MapPin className="w-8 h-8 mx-auto mb-3 opacity-90" strokeWidth={1.5} />
             <h3 className="font-display text-xl font-bold mb-2">Indirizzo</h3>
             <p className="font-body opacity-80 leading-relaxed">
               Viale Baccarini, 26<br />
@@ -41,7 +42,7 @@ const InfoSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span className="text-3xl mb-3 block">🕐</span>
+            <Clock className="w-8 h-8 mx-auto mb-3 opacity-90" strokeWidth={1.5} />
             <h3 className="font-display text-xl font-bold mb-2">Orari</h3>
             <p className="font-body opacity-80 leading-relaxed">
               Tutti i giorni a cena<br />
@@ -56,7 +57,7 @@ const InfoSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="text-3xl mb-3 block">📞</span>
+            <Phone className="w-8 h-8 mx-auto mb-3 opacity-90" strokeWidth={1.5} />
             <h3 className="font-display text-xl font-bold mb-2">Contatti</h3>
             <p className="font-body opacity-80 leading-relaxed">
               <a href="tel:0558042226" className="hover:opacity-100 transition-opacity underline underline-offset-4">

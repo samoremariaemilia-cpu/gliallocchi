@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Phone, MapPin } from "lucide-react";
 import heroPizza from "@/assets/hero-pizza.jpg";
 import logoWhite from "@/assets/logo-allocchi-white.png";
 
@@ -65,7 +66,7 @@ const HeroSection = () => {
             href="tel:0558042226"
             className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-body font-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity text-lg"
           >
-            📞 Chiama ora
+            <Phone className="w-5 h-5" /> Chiama ora
           </a>
           <a
             href="https://maps.google.com/?q=Viale+Baccarini+26+50034+Marradi+FI"
@@ -73,21 +74,11 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 border-2 border-warm-dark-foreground/40 text-warm-dark-foreground font-body font-bold px-8 py-3 rounded-full hover:bg-warm-dark-foreground/10 transition-colors text-lg"
           >
-            📍 Come raggiungerci
+            <MapPin className="w-5 h-5" /> Come raggiungerci
           </a>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <div className="w-6 h-10 border-2 border-warm-dark-foreground/40 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-warm-dark-foreground/60 rounded-full" />
-        </div>
-      </motion.div>
     </section>
   );
 };
