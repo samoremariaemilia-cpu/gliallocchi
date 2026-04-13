@@ -18,6 +18,7 @@ const galleryImages = [
   { src: pizza10, alt: "Pizza con mortadella e burrata" },
   { src: pizza11, alt: "Calzone ripieno" },
   { src: pizza12, alt: "Pizza marinara con olive" },
+  { src: pizza13, alt: "Preparazione pizza con basilico fresco" },
 ];
 
 const PizzaGallery = () => {
