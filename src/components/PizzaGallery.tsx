@@ -8,6 +8,7 @@ import pizza9 from "@/assets/pizza-9.jpg";
 import pizza10 from "@/assets/pizza-10.jpg";
 import pizza11 from "@/assets/pizza-11.jpg";
 import pizza12 from "@/assets/pizza-12.jpg";
+import pizza13 from "@/assets/pizza-13.jpg";
 
 const galleryImages = [
   { src: pizza6, alt: "Pizza margherita" },
