@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import pizza5 from "@/assets/pizza-5.jpg";
 import pizza6 from "@/assets/pizza-6.jpg";
 import pizza7 from "@/assets/pizza-7.jpg";
 import pizza8 from "@/assets/pizza-8.jpg";
@@ -11,7 +10,6 @@ import pizza11 from "@/assets/pizza-11.jpg";
 import pizza12 from "@/assets/pizza-12.jpg";
 
 const galleryImages = [
-  { src: pizza5, alt: "Preparazione pizza con basilico" },
   { src: pizza6, alt: "Pizza margherita" },
   { src: pizza7, alt: "Pizza con bacon e cheddar" },
   { src: pizza8, alt: "Pizza con peperoni e salsiccia" },
