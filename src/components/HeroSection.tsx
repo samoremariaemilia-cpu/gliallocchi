@@ -14,6 +14,9 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-warm-dark/70 via-warm-dark/50 to-warm-dark/80" />
       </div>
