@@ -64,6 +64,9 @@ const PizzaGallery = () => {
                   alt={photo.alt}
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={800}
                 />
               </motion.button>
             ))}
